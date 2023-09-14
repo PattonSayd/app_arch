@@ -1,4 +1,3 @@
-import 'package:app_arch/shared/const/sizes.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -7,11 +6,10 @@ class SplashScreen extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => const Scaffold(
-        body: Padding(
-          padding: EdgeInsets.all(Sizes.defaultSpacing),
-          child: Center(
-            child: Text('Wait...'),
+  Widget build(BuildContext context) => Scaffold(
+        body: Center(
+          child: Image.asset(
+            "assets/sp.gif",
           ),
         ),
       );

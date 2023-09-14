@@ -1,6 +1,5 @@
+import 'package:app_arch/shared/scope/app/auth/user_data.dart';
 import 'package:flutter/material.dart';
-
-import 'package:app_arch/shared/scope/app/app_scope/auth/user_data.dart';
 
 class Auth extends StatefulWidget {
   const Auth({
