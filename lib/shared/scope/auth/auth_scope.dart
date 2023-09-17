@@ -1,8 +1,8 @@
 import 'package:app_arch/shared/scope/app/auth/user_data.dart';
 import 'package:flutter/material.dart';
 
-class Auth extends StatefulWidget {
-  const Auth({
+class AuthScope extends StatefulWidget {
+  const AuthScope({
     Key? key,
     required this.notAuthorized,
     required this.authorized,
@@ -12,10 +12,10 @@ class Auth extends StatefulWidget {
   final Widget Function(BuildContext context, UserData user) authorized;
 
   @override
-  State<Auth> createState() => _AuthState();
+  State<AuthScope> createState() => _AuthScopeState();
 }
 
-class _AuthState extends State<Auth> {
+class _AuthScopeState extends State<AuthScope> {
   UserData? user;
 
   @override

@@ -4,7 +4,7 @@ import 'package:app_arch/home/ui/home_splash_screen.dart';
 import 'package:app_arch/login/ui/login_screen.dart';
 import 'package:app_arch/shared/const/strings.dart';
 import 'package:app_arch/shared/scope/app/app_scope/app_scope.dart';
-import 'package:app_arch/shared/scope/auth/auth.dart';
+import 'package:app_arch/shared/scope/auth/auth_scope.dart';
 import 'package:app_arch/shared/scope/user/user_scope.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,7 @@ class _AppState extends State<App> {
       home: AppScope(
         init: () => Future.delayed(const Duration(milliseconds: 5500)),
         initialization: (_) => const SplashScreen(),
-        initialized: (_) => Auth(
+        initialized: (_) => AuthScope(
           notAuthorized: (_) => const LoginScreen(),
           authorized: (_, user) => UserScope(
             user: user,
