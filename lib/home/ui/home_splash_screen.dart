@@ -14,10 +14,6 @@ class _HomeSplashScreenState extends State<HomeSplashScreen> {
         appBar: AppBar(
           title: const Text(Strings.homeTitle),
         ),
-        body: Center(
-          child: Image.asset(
-            "assets/loading.gif",
-          ),
-        ),
+        body: const Center(child: CircularProgressIndicator()),
       );
 }

@@ -22,11 +22,9 @@ class _AuthScopeState extends State<AuthScope> {
   void initState() {
     super.initState();
 
-    Future<void>.delayed(const Duration(milliseconds: 3000)).then(
-      (value) => setState(
-        () => user = const UserData(name: 'User 1'),
-      ),
-    );
+    Future<void>.delayed(const Duration(milliseconds: 1000)).then((_) {
+      setState(() => user = const UserData(name: 'User 1'));
+    });
   }
 
   @override

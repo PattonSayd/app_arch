@@ -1,3 +1,4 @@
+import 'package:app_arch/shared/scope/app/app_scope/app_scope.dart';
 import 'package:app_arch/shared/scope/app/auth/user_data.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +17,11 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text(Strings.homeTitle),
         ),
-        body: Center(
-          child: _Greetings(user.name),
+        body: ListView(
+          children: [
+            _Greetings(user.name),
+            const _AppSettingsView(),
+          ],
         ),
       );
 }
@@ -25,7 +29,7 @@ class HomeScreen extends StatelessWidget {
 class _Greetings extends StatelessWidget {
   final String name;
 
-  const _Greetings(this.name, [Key? key]) : super(key: key);
+  const _Greetings(this.name);
 
   @override
   Widget build(BuildContext context) => ListTile(
@@ -34,4 +38,15 @@ class _Greetings extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
       );
+}
+
+class _AppSettingsView extends StatelessWidget {
+  const _AppSettingsView();
+
+  @override
+  Widget build(BuildContext context) {
+    final settings = AppScope.of(context).initialAppSettings;
+
+    return Text('App someProperty: ${settings.someProperty}');
+  }
 }
